@@ -226,6 +226,7 @@ class QASMNodeVisitor(qasm3ParserVisitor):
             return ast.QuantumMeasurementStatement(
                 measure=self.visit(ctx.measureExpression()),
                 target=self.visit(ctx.indexedIdentifier()),
+                op=ast.AssignmentOperator[ctx.op.text],
             )
         return ast.ClassicalAssignment(
             lvalue=self.visit(ctx.indexedIdentifier()),

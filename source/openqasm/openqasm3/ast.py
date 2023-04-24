@@ -579,6 +579,7 @@ class QuantumMeasurementStatement(Statement):
 
     measure: QuantumMeasurement
     target: Optional[Union[IndexedIdentifier, Identifier]]
+    op: AssignmentOperator = AssignmentOperator["="]
 
 
 @dataclass
